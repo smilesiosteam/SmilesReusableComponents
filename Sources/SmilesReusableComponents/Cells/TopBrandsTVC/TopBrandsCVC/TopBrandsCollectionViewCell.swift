@@ -27,7 +27,7 @@ class TopBrandsCollectionViewCell: UICollectionViewCell {
         title.font = .circularXXTTMediumFont(size: 14)
     }
 
-    func configureCell(with data: GetTopBrandsResponseModel.BrandDO) {
+    func configureCell(with data: BrandDO) {
         image.setImageWithUrlString(data.iconUrl.asStringOrEmpty()) { image in
             if let image = image {
                 self.image.image = image

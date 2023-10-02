@@ -18,13 +18,13 @@ public class TopBrandsTableViewCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    public var collectionsDataTopBrand: [GetTopBrandsResponseModel.BrandDO]?{
+    public var collectionsDataTopBrand: [BrandDO]?{
         didSet{
             self.collectionView?.reloadData()
         }
     }
     
-    public var callBack: ((GetTopBrandsResponseModel.BrandDO) -> ())?
+    public var callBack: ((BrandDO) -> ())?
     public var topBrandsType: TopBrandsType = .foodOrder
     public static let module = Bundle.module
     
