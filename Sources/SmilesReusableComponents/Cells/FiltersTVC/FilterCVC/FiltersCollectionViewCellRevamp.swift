@@ -8,6 +8,7 @@
 
 import UIKit
 import SmilesFontsManager
+import SmilesUtilities
 
 public struct FiltersCollectionViewCellRevampModel {
     public var name: String = ""

@@ -8,6 +8,7 @@
 
 import UIKit
 import SmilesFontsManager
+import SmilesUtilities
 
 public class FiltersTableViewCell: UITableViewCell {
     
