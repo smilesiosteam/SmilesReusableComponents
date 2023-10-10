@@ -62,6 +62,15 @@
         "branch" : "shared_Models",
         "revision" : "af27e89169b11d3a8b86c8cd977c56ef4ad892bb"
       }
+    },
+    {
+      "identity" : "swifttheme",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wxxsw/SwiftTheme.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f6a5442da8527f88e5b61b42131c003bd2d56803"
+      }
     }
   ],
   "version" : 2
