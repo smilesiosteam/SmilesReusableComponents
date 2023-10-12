@@ -9,35 +9,35 @@ import Foundation
 import SwiftTheme
 import UIKit
 
-@objc class RoundUIView: UIView {
+@objc public class RoundUIView: UIView {
     
-    @IBInspectable var bgThemIdentifier: String = "NavigationBarColor" {
+    @IBInspectable public var bgThemIdentifier: String = "NavigationBarColor" {
         didSet {
             theme_backgroundColor = ThemeColorPicker(stringLiteral: bgThemIdentifier)
         }
     }
     
     
-    @IBInspectable var borderColor: UIColor = UIColor.white {
+    @IBInspectable public var borderColor: UIColor = UIColor.white {
         didSet {
             self.layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 2.0 {
+    @IBInspectable public var borderWidth: CGFloat = 2.0 {
         didSet {
             self.layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable public var cornerRadius: CGFloat = 0.0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }
     }
     
     @IBInspectable
-    var shadowRadius: CGFloat {
+    public var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
         }
@@ -48,7 +48,7 @@ import UIKit
     }
     
     @IBInspectable
-    var shadowOffset : CGSize{
+    public var shadowOffset : CGSize{
         
         get{
             return layer.shadowOffset
@@ -59,7 +59,7 @@ import UIKit
     }
     
     @IBInspectable
-    var shadowColor : UIColor{
+    public var shadowColor : UIColor{
         get{
             return UIColor.init(cgColor: layer.shadowColor!)
         }
@@ -69,7 +69,7 @@ import UIKit
     }
     
     @IBInspectable
-    var shadowOpacity : Float {
+    public var shadowOpacity : Float {
         
         get{
             return layer.shadowOpacity
@@ -83,7 +83,7 @@ import UIKit
 }
 
 extension CALayer {
-    var borderUIColor: UIColor {
+    public var borderUIColor: UIColor {
         set {
             self.borderColor = newValue.cgColor
         }
@@ -96,15 +96,15 @@ extension CALayer {
 
 extension UIView{
     
-    class func fromNib<T: UIView>() -> T {
+    public class func fromNib<T: UIView>() -> T {
         return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
     }
 }
 
 
-@IBDesignable class ShadowView: UIView {
+@IBDesignable public class ShadowView: UIView {
 
-    @IBInspectable var shadowColor: UIColor? {
+    @IBInspectable public var shadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {
                 return UIColor(cgColor: color)
@@ -120,7 +120,7 @@ extension UIView{
         }
     }
 
-    @IBInspectable var shadowOpacity: Float {
+    @IBInspectable public var shadowOpacity: Float {
         get {
             return layer.shadowOpacity
         }
@@ -129,7 +129,7 @@ extension UIView{
         }
     }
 
-    @IBInspectable var shadowOffset: CGPoint {
+    @IBInspectable public var shadowOffset: CGPoint {
         get {
             return CGPoint(x: layer.shadowOffset.width, y:layer.shadowOffset.height)
         }
@@ -139,7 +139,7 @@ extension UIView{
 
      }
 
-    @IBInspectable var shadowBlur: CGFloat {
+    @IBInspectable public var shadowBlur: CGFloat {
         get {
             return layer.shadowRadius
         }
@@ -148,7 +148,7 @@ extension UIView{
         }
     }
 
-    @IBInspectable var shadowSpread: CGFloat = 0 {
+    @IBInspectable public var shadowSpread: CGFloat = 0 {
         didSet {
             if shadowSpread == 0 {
                 layer.shadowPath = nil
@@ -160,19 +160,19 @@ extension UIView{
         }
     }
     
-    @IBInspectable var borderColor: UIColor = UIColor.white {
+    @IBInspectable public var borderColor: UIColor = UIColor.white {
         didSet {
             self.layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 2.0 {
+    @IBInspectable public var borderWidth: CGFloat = 2.0 {
         didSet {
             self.layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable public var cornerRadius: CGFloat = 0.0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }
