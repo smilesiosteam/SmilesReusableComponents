@@ -10,8 +10,19 @@ import SmilesSharedServices
 import SmilesUtilities
 import SmilesFontsManager
 
-class FAQTableViewCell: UITableViewCell {
+
+protocol CellConfigurable {
+    var title: String { get }
+    var content: String { get }
+    var isHidden: Bool? { get }
+}
+
+
+
+public class FAQTableViewCell: UITableViewCell{
     
+    
+
     // MARK: - OUTLETS -
     
     @IBOutlet weak var containerStackView: UIStackView!
@@ -27,21 +38,37 @@ class FAQTableViewCell: UITableViewCell {
     
     // MARK: - LIFECYCLE -
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupCell(faqDetail: FaqsDetail) {
-        
-        titleLabel.text = faqDetail.faqTitle
-        descriptionLabel.attributedText(faqDetail.faqContent.asStringOrEmpty().htmlToAttributedString, style: .smilesBody2,
-                                        alignment: AppCommonMethods.languageIsArabic() ? .right : .left)
-        dropdownImageView.image = UIImage(named: (faqDetail.isHidden ?? true) ? "faq_dropdown" : "faq_collapse", in: .module, compatibleWith: nil)
-        titleLabel.semanticContentAttribute = AppCommonMethods.languageIsArabic() ? .forceRightToLeft : .forceLeftToRight
-        
-    }
+    
+//    func setupCellsetupCell<T: CellConfigurable>(model: T) {
+//        
+//        
+//        titleLabel.text = model.title
+//        descriptionLabel.attributedText(model.content.htmlToAttributedString, style: .smilesBody2,
+//                                        alignment: AppCommonMethods.languageIsArabic() ? .right : .left)
+//        dropdownImageView.image = UIImage(named: (model.isHidden ?? true) ? "faq_dropdown" : "faq_collapse", in: .module, compatibleWith: nil)
+//        titleLabel.semanticContentAttribute = AppCommonMethods.languageIsArabic() ? .forceRightToLeft : .forceLeftToRight
+//        
+//    }
+    
+    public func setupCell<T>(model: T) {
+            if let configurableModel = model as? CellConfigurable {
+                titleLabel.text = configurableModel.title
+                descriptionLabel.text = configurableModel.content
+                dropdownImageView.image = UIImage(named: (configurableModel.isHidden ?? true) ? "dropdown" : "collapse")
+            } else {
+                // Handle the case where the model does not conform to CellConfigurable
+                // You may want to log an error or set default values for the UI elements.
+                print("Warning: Model does not conform to CellConfigurable")
+            }
+        }
+    
+    
 }
