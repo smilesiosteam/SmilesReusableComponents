@@ -30,9 +30,11 @@ public class FAQTableViewCell: UITableViewCell{
     @IBOutlet weak var dropdownImageView: UIImageView!
     @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var bottomView: UIView! {
+    @IBOutlet weak var bottomView: UIView!
+    
+    public var bottomViewIsHidden: Bool {
         didSet {
-            bottomView.isHidden = true
+            self.bottomView.isHidden = bottomViewIsHidden
         }
     }
     
