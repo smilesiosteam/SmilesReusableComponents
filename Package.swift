@@ -18,8 +18,9 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "https://github.com/smilesiosteam/SmilesFontsManager.git", branch: "main"),
-        .package(url: "https://github.com/smilesiosteam/SmilesUtilities.git", branch: "shared_Models"),
+        .package(url: "https://github.com/smilesiosteam/SmilesUtilities.git", branch: "main"),
         .package(url: "https://github.com/smilesiosteam/SmilesLanguageManager.git", branch: "main"),
+        .package(url: "https://github.com/smilesiosteam/SmilesSharedServices.git", branch: "main"),
         .package(url: "https://github.com/wxxsw/SwiftTheme.git", branch: "master")
         
     ],
@@ -32,6 +33,7 @@ let package = Package(
                 .product(name: "SmilesFontsManager", package: "SmilesFontsManager"),
                 .product(name: "SmilesUtilities", package: "SmilesUtilities"),
                 .product(name: "SmilesLanguageManager", package: "SmilesLanguageManager"),
+                .product(name: "SmilesSharedServices", package: "SmilesSharedServices"),
                 .product(name: "SwiftTheme", package: "SwiftTheme")
             ])
     ]
