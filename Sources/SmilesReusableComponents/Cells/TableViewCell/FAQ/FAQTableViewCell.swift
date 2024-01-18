@@ -32,7 +32,7 @@ public class FAQTableViewCell: UITableViewCell{
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var bottomView: UIView!
     
-    public var bottomViewIsHidden: Bool {
+    public var bottomViewIsHidden: Bool = false {
         didSet {
             self.bottomView.isHidden = bottomViewIsHidden
         }
