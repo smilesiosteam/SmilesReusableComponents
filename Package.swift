@@ -35,6 +35,9 @@ let package = Package(
                 .product(name: "SmilesLanguageManager", package: "SmilesLanguageManager"),
                 .product(name: "SmilesSharedServices", package: "SmilesSharedServices"),
                 .product(name: "SwiftTheme", package: "SwiftTheme")
-            ])
+            ],
+        resources: [
+            .process("Resources")
+        ])
     ]
 )
