@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "faq_collapse.png",
+      "filename" : "expand.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "faq_collapse@2x.png",
+      "filename" : "expand@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "faq_collapse@3x.png",
+      "filename" : "expand@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
